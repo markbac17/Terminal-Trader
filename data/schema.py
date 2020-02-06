@@ -11,16 +11,16 @@ def schema(dbpath=DBPATH):
         sql = """CREATE TABLE accounts (
             account_id INTEGER PRIMARY KEY AUTOINCREMENT,
             username VARCHAR,
-            password_hash VARCHAR,
+            password_hash VARCHAR, 
             balance FLOAT
         );"""
         cur.execute(sql)
 
         sql = """CREATE TABLE positions (
             position_id INTEGER PRIMARY KEY AUTOINCREMENT,
-            account_id INT,
+            account_id INTEGER,
             ticker VARCHAR,
-            num_shares INT,
+            num_shares INTEGER,
             FOREIGN KEY (account_id) REFERENCES accounts(account_id)
         );"""
         cur.execute(sql)
@@ -28,8 +28,10 @@ def schema(dbpath=DBPATH):
         sql = """CREATE TABLE trades (
             trade_id INTEGER PRIMARY KEY AUTOINCREMENT,
             account_id VARCHAR,
-            volume INT,
+            volume INTEGER,
             price FLOAT,
+            time INTEGER,
+            market_value FLOAT,
             FOREIGN KEY (account_id) REFERENCES accounts(account_id)
         );"""
         cur.execute(sql)
