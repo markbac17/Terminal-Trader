@@ -1,7 +1,6 @@
 import hashlib
 import requests
 import bcrypt
-symbol = 'aapl'
 
 def hash_password(password):
     return bcrypt.hashpw(password.encode(), bcrypt.gensalt())
@@ -18,5 +17,3 @@ def get_price(ticker):
     response = requests.get('https://cloud.iexapis.com/stable/tops?token={}symbols={}'.format(credential,ticker))
     data = response.json()
     return data[0]["lastSalePrice"]
-
-get_price('TSLA')

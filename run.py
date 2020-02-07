@@ -1,5 +1,6 @@
 import os
 from app import Account, Position, Trade, run
+# from app import ORM
 
 DIR = os.path.dirname(__file__)
 DBFILENAME = "trader.db"

@@ -1,14 +1,16 @@
 def user_menu():
+    print("Welcome to Terminal Trader.")
+    print()
     print('User logon')
     print()
     print('1. Login')
     print('2. Create account')
     print('3. Exit')
+    print()
     choice = input("Select option: ")
     return choice
 
 def main_menu():
-    print('Welcome!')
     print()
     print('1. View balance')
     print('2. Deposit')
@@ -18,8 +20,20 @@ def main_menu():
     print('6. View trades')
     print('7. Lookup')
     print('8. Logout')
+    print()
     choice = input('Enter choice: ')
     return choice
+
+def trade_stock():
+    print()
+    ticker = input("enter stock ticker: ")
+    quantity = input("Enter quantity: ")
+    return ticker, int(quantity)
+
+def display_balance(balance):
+    print()
+    print("Account balance is: ${}".format(balance))
+    print()
 
 def create_account():
     print()
@@ -43,7 +57,7 @@ def deposit():
     print('Deposit funds')
     print()
     balance = input('Enter amount to deposit: ')
-    return balance
+    return int(balance)
 
 def lookup_ticker():
     print()
@@ -54,9 +68,13 @@ def lookup_ticker():
 
 
 def goodbye():
-    print("Goodbye")
+    print()
+    print("Thank you for usinng Terminal Trader")
+    exit()
+
 
 def bad_input():
+    print()
     print("Bad input. Retry!")
 
 def enter_to_continue():

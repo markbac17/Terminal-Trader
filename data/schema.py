@@ -28,6 +28,7 @@ def schema(dbpath=DBPATH):
         sql = """CREATE TABLE trades (
             trade_id INTEGER PRIMARY KEY AUTOINCREMENT,
             account_id VARCHAR,
+            ticker VARCHAR,
             volume INTEGER,
             price FLOAT,
             time INTEGER,
